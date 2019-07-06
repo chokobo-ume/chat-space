@@ -24,8 +24,10 @@
 ### ①usersテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |name|string|null :false, unique :true|
 |email|string|null :false, unique :true|
+
 
  * アソシエーション
    - has_many: messages
@@ -36,6 +38,7 @@
 ### ②messagesテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |body|text|-|
 |image|string|-|
 |user_id|references:user|foreign_key: true|
@@ -49,6 +52,7 @@
 ### ③groupsテーブル
 
 |Column|Type|Options|
+|------|----|-------|
 |name|string|null :false, unique :true|
 
  * アソシエーション
@@ -59,6 +63,7 @@
 ### ④group_usersテーブル (中間テーブル)
 
 |Column|Type|Options|
+|------|----|-------|
 |group_id|references:group|unique :true, index|
 |user_id|references:user|unique :true, index|
 
