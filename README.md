@@ -31,7 +31,7 @@
 
  * アソシエーション
    - has_many: messages
-   - has_many: group, through: :groups_users
+   - has_many: groups, through: :groups_users
    - has_many: group_users
 
 
@@ -56,7 +56,6 @@
 |name|string|null :false, unique :true|
 
  * アソシエーション
-   - has_many: user
    - has_many: messages
    - has_many: users through: :group_users
 
