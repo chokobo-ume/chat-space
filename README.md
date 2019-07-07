@@ -31,7 +31,7 @@
 
  * アソシエーション
    - has_many: messages
-   - has_many: groups, through: :groups_users
+   - has_many: group, through: :groups_users
    - has_many: group_users
 
 
@@ -41,12 +41,12 @@
 |------|----|-------|
 |body|text|-|
 |image|string|-|
-|user_id|references:user|foreign_key: true|
-|group_id|references:group|foreign_key: true|
+|user_id|references:user|null: false, foreign_key: true|
+|group_id|references:group|null: false, foreign_key: true|
 
  * アソシエーション
-   - belongs_to: users
-   - belongs_to: groups
+   - belongs_to: user
+   - belongs_to: group
 
 
 ### ③groupsテーブル
@@ -56,17 +56,17 @@
 |name|string|null :false, unique :true|
 
  * アソシエーション
-   - has_many: users
-   - belongs_to: users through: :group_users
+   - has_many: user
+   - has_many: users through: :group_users
 
 
 ### ④group_usersテーブル (中間テーブル)
 
 |Column|Type|Options|
 |------|----|-------|
-|group_id|references:group|unique :true, index|
-|user_id|references:user|unique :true, index|
+|group_id|references:group|null: false, foreign_key: true|
+|user_id|references:user|null: false, foreign_key: true|
 
  * アソシエーション
-   - belongs_to: users
-   - belongs_to: groups
+   - belongs_to: user
+   - belongs_to: group
