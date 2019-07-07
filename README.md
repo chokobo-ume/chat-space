@@ -25,7 +25,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null :false, unique :true|
+|name|string|null :false|
 |email|string|null :false, unique :true|
 
 
@@ -57,6 +57,7 @@
 
  * アソシエーション
    - has_many: user
+   - has_many: messages
    - has_many: users through: :group_users
 
 
