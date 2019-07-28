@@ -1,0 +1,55 @@
+// ヘッダーとサイド部分のscss
+
+// ヘッダー
+.chat_header {
+  background-color: #38AEF0;
+  text-align: center;
+  color: $text-color;
+}
+
+//サイド
+.chat__side {
+  height: 100vh;
+  box-sizing: border-box;
+  float: left;
+  width: 300px;
+  color: $text-color;
+  overflow: scroll;
+  &__header {
+    background-color: #253141;
+    height: 14vh;
+    line-height: 100px;
+    &__name {
+      font-size: 16px;
+      font-weight: bold;
+      float: left;
+      text-align: left;
+      padding-left: 20px;
+    }
+    &__icon {
+      float: right;
+      padding-right: 20px;
+    }
+  }
+  &__main {
+    box-sizing: border-box;
+    background-color: #2f3e51;
+    font-weight: bold;
+    height: 85vh;
+    padding-left: 10px;
+    text-align: left;
+    &__name {
+      box-sizing: border-box;
+      font-size: 15px;
+      padding: 20px 0 5px 0;
+      text-align: left;
+    }
+    &__message {
+      box-sizing: border-box;
+      font-size: 11px;
+      padding-bottom: 40px;
+      text-align: left;
+    }
+  }
+}
+
