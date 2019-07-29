@@ -9,6 +9,7 @@
 
 //サイド
 .chat__side {
+
   height: 100vh;
   box-sizing: border-box;
   float: left;
@@ -29,6 +30,10 @@
     &__icon {
       float: right;
       padding-right: 20px;
+      a {
+        color: white;
+        text-decoration: none;
+      }  
     }
   }
   &__main {

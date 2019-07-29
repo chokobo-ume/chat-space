@@ -11,8 +11,8 @@
           .chat__side__header__name
             test-user
           .chat__side__header__icon
-            = fa_icon 'pencil-square-o', class: 'icon'
-            = fa_icon 'cog', class: 'icon'
+            %a.i.fa.fa-pencil-square-o(href="#" class="icon")
+            %a.i.fa.fa-cog(href="#" class="icon")
         .chat__side__main
           = render partial: 'side_main'
 
