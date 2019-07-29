@@ -70,7 +70,7 @@
   input[type="text"] {
     height: 50px;
     width: 63vw;
-    margin: 20px 0 ;
+    margin: 20px 0;
   }
   input[type="button"] {  
     width: 7vw;
@@ -87,3 +87,5 @@
     right: 40px; 
   }
 }
+
+.file input{ display:none; }
