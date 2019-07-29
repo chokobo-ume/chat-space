@@ -29,5 +29,9 @@
 
         .chat__main__footer
           %input(type="text" value="type a message")
-          = fa_icon 'picture-o', class: 'icon'
+          %label.file
+            %i.fa.fa-picture-o(class="icon")
+            %input(type="file")
           %input(type="button" value="Send")
+
+
