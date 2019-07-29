@@ -13,11 +13,9 @@
   * 画像送信機能
   * チャットの自動更新
 
-
 ### 開発環境（version）
   * Rails  "5.0.7.2"
   * Ruby   "2.5.1"
-
 
 ## データベース設計
 
@@ -27,7 +25,6 @@
 |------|----|-------|
 |name|string|null :false|
 |email|string|null :false, unique :true|
-
 
  * アソシエーション
    - has_many: messages
@@ -70,4 +67,4 @@
 
  * アソシエーション
    - belongs_to: user
-   - belongs_to: group
+   - belongs_to: group 
