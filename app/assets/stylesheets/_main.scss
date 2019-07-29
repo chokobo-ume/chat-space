@@ -60,9 +60,7 @@
       margin-left: 40px;
     }
   }
-}
-
-.chat__main__footer {
+&__footer {
   height: 15vh;
   box-sizing: border-box;
   background-color: #DDDDDD;
@@ -71,20 +69,21 @@
     height: 50px;
     width: 63vw;
     margin: 20px 0;
-  }
+    }
   input[type="button"] {  
     width: 7vw;
     height: 50px;
     background-color: #38AEF0;
     color: white;
-  }
+    }
   input[value="type a message"] {  
     color: #434A54;
     padding-left: 10px; 
-  }
+    }
   .icon {
     position: relative;
     right: 40px; 
+    }
   }
 }
 
