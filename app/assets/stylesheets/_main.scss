@@ -1,7 +1,5 @@
 //メイン部分とフッター部分のscss
 
-//メイン
-
 .chat {
   display: flex;
   &__main {
@@ -11,7 +9,6 @@
     background-color: white;
     float: left;
     &__header {
-      margin-bottom: 15px;
       box-sizing: border-box;
       border-bottom: 1px solid #eeeeee;
       &__group__name {
@@ -40,7 +37,7 @@
     &__message {
       box-sizing: border-box;
       background-color: #fafafa;
-      height: 70vh;
+      height: 73vh;
         &__name {
           box-sizing: border-box;
           display: inline-block;
@@ -64,7 +61,7 @@
       }
     }
   &__footer {
-    height: 14vh;
+    height: 13vh;
     box-sizing: border-box;
     background-color: #DDDDDD;
     text-align: center;
