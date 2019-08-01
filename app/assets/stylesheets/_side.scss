@@ -1,12 +1,5 @@
 // ヘッダーとサイド部分のscss
 
-// ヘッダー
-.chat_header {
-  background-color: #38AEF0;
-  text-align: center;
-  color: $text-color;
-}
-
 //サイド
 .chat__side {
 
@@ -15,7 +8,6 @@
   float: left;
   width: 300px;
   color: $text-color;
-  overflow: scroll;
   &__header {
     background-color: #253141;
     height: 14vh;
@@ -40,16 +32,21 @@
     box-sizing: border-box;
     background-color: #2f3e51;
     font-weight: bold;
-    height: 85vh;
+    height: 86vh;
     padding-left: 10px;
     text-align: left;
+    a {
+      text-decoration: none;
+    }
     &__name {
+      color: white;
       box-sizing: border-box;
       font-size: 15px;
       padding: 20px 0 5px 0;
       text-align: left;
     }
     &__message {
+      color: white;
       box-sizing: border-box;
       font-size: 11px;
       padding-bottom: 40px;
