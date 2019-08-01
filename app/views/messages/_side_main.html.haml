@@ -1,13 +1,7 @@
 .chat__side__main
-  .chat__side__main__name
-    test-group
-  .chat__side__main__message
-    さようなら！
-  .chat__side__main__name
-    sample-group
-  .chat__side__main__message
-    hello!
-  .chat__side__main__name
-    example
-  .chat__side__main__message
-    まだメッセージがありません
+  - current_user.groups.each do |group|
+    = link_to group_messages_path(group) do
+      .chat__side__main__name
+        = group.name
+      .chat__side__main__message
+        メッセージはまだありません。
