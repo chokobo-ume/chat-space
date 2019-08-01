@@ -1,57 +1,45 @@
-// ヘッダーとサイド部分のscss
-
-//サイド
-.chat__side {
-
-  height: 100vh;
+.side-bar {
   box-sizing: border-box;
-  float: left;
+  color: white;
   width: 300px;
-  color: $text-color;
-  &__header {
+  .header {
     background-color: #253141;
-    height: 14vh;
+    height: 100px;
     line-height: 100px;
+    padding: 0 20px;
     &__name {
+      display: inline-block;
       font-size: 16px;
       font-weight: bold;
-      float: left;
-      text-align: left;
-      padding-left: 20px;
     }
-    &__icon {
+    &__lists {
+      display: inline-block;
       float: right;
-      padding-right: 20px;
-      a {
+      .list {
+        display: inline-block;
+      }
+      .icon {
         color: white;
-        text-decoration: none;
-      }  
+      }
     }
   }
-  &__main {
-    box-sizing: border-box;
+
+  .groups {
     background-color: #2f3e51;
-    font-weight: bold;
-    height: 86vh;
-    padding-left: 10px;
-    text-align: left;
-    a {
-      text-decoration: none;
-    }
-    &__name {
-      color: white;
+    height: calc(100vh - 100px);
+    padding: 0 20px;
+    .group {
       box-sizing: border-box;
-      font-size: 15px;
-      padding: 20px 0 5px 0;
-      text-align: left;
-    }
-    &__message {
-      color: white;
-      box-sizing: border-box;
-      font-size: 11px;
-      padding-bottom: 40px;
-      text-align: left;
+      padding: 20px 0 40px;
+      &__name {
+        color: white;
+        font-size: 15px;
+      }
+      &__message {
+        color: white;
+        font-size: 11px;
+        margin-top: 5px;
+      }
     }
   }
 }
-
