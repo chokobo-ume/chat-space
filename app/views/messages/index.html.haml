@@ -5,16 +5,17 @@
   .header
     .left-header
       .left-header__title
-        test-group
+        = @group.name
       .left-header__members
-        Members: 
+        Members： 
         .member
-          test-user
+          - @members.each do |member|
+            = member.name
     .right-header
       .right-header__button
         Edit
-  .message
-    = render partial: 'main_message_contents', collection: @messages
+  .messages
+    = render partial: 'message', collection: @messages
 
   .form
     = form_for [@group, @message] do |f|
