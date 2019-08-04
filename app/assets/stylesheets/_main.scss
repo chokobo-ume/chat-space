@@ -1,91 +1,105 @@
-//メイン部分とフッター部分のscss
-
 .chat {
-  display: flex;
-  &__main {
+  width: calc(100vw - 300px);
+  float: right;
+  background-color: white;
+  .header {
     box-sizing: border-box;
-    height: 100vh;
-    width: calc(100vw - 300px);
-    background-color: white;
-    float: left;
-    &__header {
-      box-sizing: border-box;
-      border-bottom: 1px solid #eeeeee;
-      &__group__name {
-        box-sizing: border-box;
+    border-bottom: 1px solid #eeeeee;
+    height: 14vh;
+    padding: 0 40px;
+    .left-header {
+      float: left;
+      &__title {
+        color: #333;
         font-size: 20px;
-        color: #333333;
-        padding: 35px 0 15px 40px;
+        margin-top: 35px;
       }
-      &__member__name {
-        box-sizing: border-box;
-        font-size: 12px;
+      &__members {
+        display: flex;
         color: #999999;
-        padding-left: 40px; 
-      }
-      &__edit {
-        box-sizing: border-box;
-        float: right;
-        border: 1px solid #38AEF0;
-        color: #38AEF0;
-        line-height: 40px;
-        margin: -63px 40px 0 0;
-        padding: 0 20px;
-        text-align: center;
-      }
-    }
-    &__message {
-      box-sizing: border-box;
-      background-color: #fafafa;
-      height: 73vh;
-        &__name {
-          box-sizing: border-box;
+        font-size: 12px;
+        margin-top: 15px;
+        .member {
           display: inline-block;
-          padding: 46px 0 10px 0;
-          margin-left: 40px;
-          margin-right: 5px;
-        font-size: 16px;
-        font-weight: bold;
-        color: #434A54;
-      }
-      &__time {
-        box-sizing: border-box;
-        display: inline-block;
-        color: #999999;
-        font-size: 12px;
-      }
-      &__text {
-        box-sizing: border-box;
-        font-size: 14px;
-        margin-left: 40px;
+          padding-right: 5px;
+        }
       }
     }
-  &__footer {
-    height: 13vh;
-    box-sizing: border-box;
-    background-color: #DDDDDD;
-    text-align: center;
-    input[type="text"] {
-      height: 50px;
-      width: 63vw;
-      margin: 20px 0;
-      }
-    input[type="button"] {  
-      width: 7vw;
-      height: 50px;
-      background-color: #38AEF0;
-      color: white;
-      }
-    input[value="type a message"] {  
-      color: #434A54;
-      padding-left: 10px; 
-      }
-    .icon {
-      position: relative;
-      right: 40px; 
+    .right-header {
+      border: 1px solid #38AEF0;
+      color: #38AEF0;
+      float: right;
+      height: 40px;
+      line-height: 40px;
+      margin-top: 28px;
+      padding: 0 20px;
+      &__button {
+        text-decoration: none;
       }
     }
   }
-}
 
-.file input{ display:none; }
+  .message {
+    background-color: #FAFAFA;
+    box-sizing: border-box;
+    padding: 46px 40px 0;
+    height: 73.5vh;
+      .upper-message {
+        display: flex;
+        &__user-name {
+          color: black;
+          font-size: 16px;
+          font-weight: bold;
+        }
+        &__date {
+          color: #999999;
+          font-size: 12px;
+          padding-left: 10px;
+        }
+      }
+      .lower-message {
+        margin-top: 10px;
+        &__content {
+          color: black;
+          font-size: 14px;
+          margin-bottom: 40px;
+        }
+      }
+  }
+
+  .form {
+    background-color: #DDDDDD;
+    box-sizing: border-box;
+    height: 12.5vh;
+    padding: 20px 50px 20px 40px;
+    &__message {
+      border: none;
+      float: left;
+      height: 50px;
+      width: calc(100% - 160px);
+      padding-left: 10px;
+    }
+    &__mask {
+      background-color: white;
+      float: left;
+      height: 50px;
+      padding-right: 10px;
+      &__image {
+        font-size: 20px;
+        line-height: 50px;
+      }
+      .hidden {
+        display: none;
+      }
+    }
+    &__submit {
+      background-color: #38AEF0;
+      border: none;
+      color: white;
+      float: right;
+      font-size: 16px;
+      height: 50px;
+      padding: 0 30px;
+    }
+  }
+}

@@ -1,23 +1,26 @@
+.side
+  = render partial: 'side_main'
+
 .chat
-  .chat__side
-    = render partial: 'side_main'
-
-  .chat__main
-    .chat__main__header
-      .chat__main__header__group__name
+  .header
+    .left-header
+      .left-header__title
         test-group
-      .chat__main__header__member__name
-        Members: test-user
-      .chat__main__header__edit
+      .left-header__members
+        Members: 
+        .member
+          test-user
+    .right-header
+      .right-header__button
         Edit
-    .chat__main__message
-      = render partial: 'main_message_contents'
+  .message
+    = render partial: 'main_message_contents', collection: @messages
 
-    .chat__main__footer
-      %input(type="text" value="type a message")
-      %label.file
-        %i.fa.fa-picture-o(class="icon")
-        %input(type="file")
-      %input(type="button" value="Send")
-
-
+  .form
+    = form_for [@group, @message] do |f|
+      = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+      .form__mask
+        = f.label :image, class: 'form__mask__image' do
+          = fa_icon 'picture-o', class: 'icon'
+          = f.file_field :image, class: 'hidden'
+      = f.submit 'Send', class: 'form__submit'
