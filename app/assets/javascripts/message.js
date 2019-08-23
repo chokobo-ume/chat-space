@@ -1,5 +1,6 @@
 $(function(){
   function buildHTML(message){
+    var content = message.is_content_present ? `${message.content} ` : ''
     var img = message.is_image_present ? `<img src='${message.image.url}'> ` : ''
     var html =
       `<div class='message' message_id="${message.id}">
@@ -13,7 +14,7 @@ $(function(){
           </div>
             <div class='lower-message'>
               <p class='lower-message__content'>
-              ${message.content}
+              ${content}
               </p>
               ${img}
             </div>
