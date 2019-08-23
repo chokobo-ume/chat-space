@@ -1,27 +1,23 @@
 $(function(){
   function buildHTML(message){
-    var img = "";
-    if (message.image) {
-      var content = message.is_content_present ? `${message.content} ` : ''
-      var image = message.is_image_present ? `<img src='${message.image.url}'> ` : ''
-    }
-      var html =
-        `<div class='message' message_id="${message.id}">
-            <div class='upper-message'>
-              <div class='upper-message__user-name'>
-                ${message.user_name}
-              </div>
-              <div class='upper-message__date'>
-                ${message.date}
-              </div>
+    var img = message.is_image_present ? `<img src='${message.image.url}'> ` : ''
+    var html =
+      `<div class='message' message_id="${message.id}">
+          <div class='upper-message'>
+            <div class='upper-message__user-name'>
+              ${message.user_name}
             </div>
-              <div class='lower-message'>
-                <p class='lower-message__content'>
-                ${content}
-                ${image}
-                </p>
-              </div>
-          </div>`
+            <div class='upper-message__date'>
+              ${message.date}
+            </div>
+          </div>
+            <div class='lower-message'>
+              <p class='lower-message__content'>
+              ${message.content}
+              </p>
+              ${img}
+            </div>
+        </div>`
       return html;
       }
 
