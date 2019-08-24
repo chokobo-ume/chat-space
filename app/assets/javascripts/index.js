@@ -52,6 +52,7 @@ $(function() {
     })
   });
 
+  //「追加」ボタン
   $('#user-search-result').on('click', '.user-search-add', function(){
     var id = $(this).attr("data-user-id");
     var name = $(this).attr("data-user-name");
@@ -59,4 +60,9 @@ $(function() {
     $('#chat-group-users').append(addNewUser);
     $(this).parent().remove();
   });
+
+  //メンバー削除
+  $("#chat-group-users").on("click",".user-search-remove", function() {
+    $(this).parent().remove();
+    });
 });
