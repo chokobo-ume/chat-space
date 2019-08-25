@@ -3,7 +3,7 @@ $(function(){
     var content = message.is_content_present ? `${message.content} ` : ''
     var img = message.is_image_present ? `<img src='${message.image.url}'> ` : ''
     var html =
-      `<div class='message' message_id="${message.id}">
+      `<div class='message' data-message-id="${message.id}">
           <div class='upper-message'>
             <div class='upper-message__user-name'>
               ${message.user_name}
