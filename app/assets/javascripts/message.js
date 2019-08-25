@@ -24,7 +24,6 @@ $(function(){
 
   $('#new_message').on('submit', function(e){
     e.preventDefault();
-    console.log(this)
     var formData = new FormData(this);
     var url = $(this).attr('action')
     $.ajax({
@@ -41,8 +40,6 @@ $(function(){
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight})
       $('.form__submit').prop("disabled", false)
       $('#new_message')[0].reset();
-
-      console.log();
       })
     .fail(function(){
       alert('error');
