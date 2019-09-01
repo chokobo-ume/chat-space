@@ -1,11 +1,12 @@
 .chat {
   width: calc(100vw - 300px);
-  float: right;
+  float: left;
   background-color: white;
   .header {
+    display: flex;
     box-sizing: border-box;
     border-bottom: 1px solid #eeeeee;
-    height: 14vh;
+    height: 100px;
     padding: 0 40px;
     .left-header {
       float: left;
@@ -18,7 +19,6 @@
         display: flex;
         color: #999999;
         font-size: 12px;
-        margin-top: 15px;
         .member {
           display: inline-block;
           padding-right: 5px;
@@ -26,15 +26,16 @@
       }
     }
     .right-header {
-      border: 1px solid #38AEF0;
-      color: #38AEF0;
-      float: right;
-      height: 40px;
-      line-height: 40px;
-      margin-top: 28px;
-      padding: 0 20px;
+      text-decoration: none;
       &__button {
-        text-decoration: none;
+        position: absolute;
+        right: 40px;
+        height: 40px;
+        line-height: 40px;
+        margin-top: 30px;
+        padding: 0 20px;
+        border: 1px solid #38AEF0;
+        color: #38AEF0;
       }
     }
   }
@@ -42,8 +43,8 @@
   .messages {
     background-color: #FAFAFA;
     box-sizing: border-box;
-    padding: 46px 40px 0;
-    height: 73.5vh;
+    padding: 46px 40px;
+    height: calc(100vh - 190px);
     overflow: scroll;
       .upper-message {
         display: flex;
@@ -71,8 +72,8 @@
   .form {
     background-color: #DDDDDD;
     box-sizing: border-box;
-    height: 12.5vh;
-    padding: 20px 50px 20px 40px;
+    height: 90px;
+    padding: 20px 40px;
     &__message {
       border: none;
       float: left;
