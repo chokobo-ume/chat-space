@@ -9,7 +9,7 @@
       .left-header__members
         Members： 
         .member
-          - @members.each do |member|
+          - @group.users.each do |member|
             = member.name
     .right-header
       .right-header__button
