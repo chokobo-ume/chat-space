@@ -1,7 +1,6 @@
 $(function(){
   function buildHTML(message){
-    var content = message.is_content_present ? `${message.content} ` : ''
-    var img = message.is_image_present ? `<img src='${message.image.url}'> ` : ''
+    image = (message.image) ? `<img class= "lower-message__image" src=${message.image} >` : "";
     var html =
       `<div class='message' data-message-id="${message.id}">
           <div class='upper-message'>
@@ -14,9 +13,9 @@ $(function(){
           </div>
             <div class='lower-message'>
               <p class='lower-message__content'>
-              ${content}
+                ${message.content}
               </p>
-              ${img}
+                ${image}
             </div>
         </div>`
       return html;
@@ -42,33 +41,31 @@ $(function(){
       $('#new_message')[0].reset();
       })
     .fail(function(){
-      alert('error');
+      alert('メッセージを入力してください');
       })
   })
 
-// 自動更新
-    var reloadMessages = function() {
-      last_message_id = $('.message').last().data('message-id');
+// 自更動新
+  var reloadMessages = function() {
+    if (window.location.href.match(/\/groups\/\d+\/messages/)){
+      var last_message_id = $('.message').last().data("message-id");
       $.ajax({
-        url: location.href,
+        url: 'api/messages',
         type: 'GET',
         dataType: 'json',
         data: {id: last_message_id}
       })
-      .done(function(messages){
-        var insertHTML = '';
-        $.forEach(function(message){
-        if(messages.length){
-          insertHTML += buildHTML(message);
-        }
-      });
-      $('.messages').append(insertHTML)
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight})
+      .done(function(messages) {
+        messages.forEach(function(message) {
+          insertHTML = buildHTML(message);
+          $('.messages').append(insertHTML);
+          $('.messages').animate({scrollTop:$('.messages')[0].scrollHeight});
+        })
       })
       .fail(function() {
-        console.log('error');
+        alert('更新に失敗しました');
       });
-
-      setInterval(reloadMessages, 5000);
     };
+  } 
+  setInterval(reloadMessages, 5000);
 });
